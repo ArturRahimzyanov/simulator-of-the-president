@@ -78,17 +78,16 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         binding.firstDesicion.text = ""
         binding.secondDesicion.text = ""
         atributesChange(direction, numberOfCard)
-
         numberOfCard++
     }
 
     private fun atributesChange(direction: Direction, numberOfCard: Int) {
         when(direction){
             Direction.Right -> {
-                weaponLevel = weaponLevel + EventList.events[numberOfCard].firstDecisionWeaponResult
-                peopleLevel = peopleLevel + EventList.events[numberOfCard].firstDecisionPeopleResult
-                rublesLevel = rublesLevel + EventList.events[numberOfCard].firstDecisionRublesResult
-                natureLevel = natureLevel + EventList.events[numberOfCard].firstDecisionNatureResult
+                weaponLevel += EventList.events[numberOfCard].firstDecisionWeaponResult
+                peopleLevel += EventList.events[numberOfCard].firstDecisionPeopleResult
+                rublesLevel += EventList.events[numberOfCard].firstDecisionRublesResult
+                natureLevel += EventList.events[numberOfCard].firstDecisionNatureResult
 
                 binding.whiteWeapon.setImageLevel(weaponLevel)
                 binding.whitePeople.setImageLevel(peopleLevel)
@@ -96,10 +95,10 @@ class MainActivity : AppCompatActivity(), CardStackListener {
                 binding.whiteNature.setImageLevel(natureLevel)
             }
             Direction.Left -> {
-                weaponLevel = weaponLevel + EventList.events[numberOfCard].secondDecisionWeaponResult
-                peopleLevel = peopleLevel + EventList.events[numberOfCard].secondDecisionPeopleResult
-                rublesLevel = rublesLevel + EventList.events[numberOfCard].secondDecisionRublesResult
-                natureLevel = natureLevel + EventList.events[numberOfCard].secondDecisionNatureResult
+                weaponLevel += EventList.events[numberOfCard].secondDecisionWeaponResult
+                peopleLevel += EventList.events[numberOfCard].secondDecisionPeopleResult
+                rublesLevel += EventList.events[numberOfCard].secondDecisionRublesResult
+                natureLevel += EventList.events[numberOfCard].secondDecisionNatureResult
 
                 binding.whiteWeapon.setImageLevel(weaponLevel)
                 binding.whitePeople.setImageLevel(peopleLevel)
@@ -130,7 +129,6 @@ class MainActivity : AppCompatActivity(), CardStackListener {
     companion object{
         val TAG = "mylogs"
     }
-
 }
 
 
