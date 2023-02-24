@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">testTask</string>
+    <string name="_123">123</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_world">hello world !</string>
+    <string name="text">Это фрагмент для отображения фото</string>
+    <string name="qqqq">qqqq</string>
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="_3">3 перейти</string>
+    <string name="button">Button</string>
+    <string name="nothing">nothing</string>
+    <string name="_1">ЭТО ФРГАМЕНТ1</string>
+    <string name="back">back</string>
+    <string name="first">first</string>
+    <string name="texttt">кусоктекста</string>
+    <string name="ble">добавить синий фрагмент</string>
+    <string name="afV">добавить фрагмент</string>
+    <string name="hello_blank_fragment2">hello_blank_fragment2</string>
+
+    <string-array name="cats">
+        <item>Просто текст1</item>
+        <item>Текст2</item>
+        <item>Текст3 </item>
+        <item>Текст4</item>
+    </string-array>
+
+</resources>
