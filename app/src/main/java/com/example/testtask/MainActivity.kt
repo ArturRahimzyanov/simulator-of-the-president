@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import com.example.testtask.databinding.ActivityMainBinding
 import com.yuyakaido.android.cardstackview.*
 
+
 class MainActivity : AppCompatActivity(), CardStackListener {
 
     lateinit var binding: ActivityMainBinding
-    private val adapter = CardStackAdapter(EventList.events)
+    private var adapter = CardStackAdapter()
+
     private lateinit var layoutManager: CardStackLayoutManager
     private var weaponLevel = 5000
     private var peopleLevel = 5000
@@ -26,8 +28,8 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setupCards()
+        CardStackAdapter()
         setupAtributtes()
     }
 
@@ -48,6 +50,7 @@ class MainActivity : AppCompatActivity(), CardStackListener {
 
         binding.cardStack.layoutManager = layoutManager
         binding.cardStack.adapter = adapter
+        adapter.setData(EventList.events)
         binding.cardStack.itemAnimator.apply {
             if (this is DefaultItemAnimator) {
                 supportsChangeAnimations = false
@@ -58,7 +61,6 @@ class MainActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCardDisappeared(view: View?, position: Int) {
         Log.d(TAG, "onCardDisappeared  $position ")
-
     }
 
     override fun onCardDragging(direction: Direction?, ratio: Float) {
@@ -78,7 +80,33 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         binding.firstDesicion.text = ""
         binding.secondDesicion.text = ""
         atributesChange(direction, numberOfCard)
+        atributesCheck(numberOfCard)
         numberOfCard++
+    }
+
+    private fun atributesCheck(numberOfCard: Int) {
+        if(weaponLevel < 0 ){ loseofWeapon() }
+        if(peopleLevel < 0){ loseofPeople() }
+        if(rublesLevel < 0){ loseofRubles() }
+        if(natureLevel < 0){ loseofNature() }
+
+    }
+
+    private fun loseofNature() {
+
+    }
+
+    private fun loseofRubles() {
+        TODO("Not yet implemented")
+    }
+
+    private fun loseofPeople() {
+        TODO("Not yet implemented")
+    }
+
+    private fun loseofWeapon() {
+        //EventList.events.add(numberOfCard, EventList.loseOfWeapon)
+
     }
 
     private fun atributesChange(direction: Direction, numberOfCard: Int) {

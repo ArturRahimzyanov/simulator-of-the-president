@@ -10,7 +10,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CardStackAdapter(val events: ArrayList<Event>) : RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
+class CardStackAdapter: RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
+
+    private val events = mutableListOf<Event>()
+
+    fun setData( newEvents: ArrayList<Event>){
+        events.addAll(newEvents)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -38,11 +45,11 @@ class CardStackAdapter(val events: ArrayList<Event>) : RecyclerView.Adapter<Card
             2 -> holder.image.setImageResource(R.drawable.solder_general)
             3 -> holder.image.setImageResource(R.drawable.secretar)
             4 -> holder.image.setImageResource(R.drawable.volcano)
-            5 -> holder.image.setImageResource(R.drawable.ruble)
+            //5 -> holder.image.setImageResource(R.drawable.)
             6 -> holder.image.setImageResource(R.drawable.skull)
             7 -> holder.image.setImageResource(R.drawable.execution)
             8 -> holder.image.setImageResource(R.drawable.war)
-            9 -> holder.image.setImageResource(R.drawable.war)
+            9 -> holder.image.setImageResource(R.drawable.virus)
         }
     }
 
