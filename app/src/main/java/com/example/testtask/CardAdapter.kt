@@ -38,6 +38,11 @@ class CardStackAdapter(val events: ArrayList<Event>) : RecyclerView.Adapter<Card
             2 -> holder.image.setImageResource(R.drawable.solder_general)
             3 -> holder.image.setImageResource(R.drawable.secretar)
             4 -> holder.image.setImageResource(R.drawable.volcano)
+            5 -> holder.image.setImageResource(R.drawable.ruble)
+            6 -> holder.image.setImageResource(R.drawable.skull)
+            7 -> holder.image.setImageResource(R.drawable.execution)
+            8 -> holder.image.setImageResource(R.drawable.war)
+            9 -> holder.image.setImageResource(R.drawable.war)
         }
     }
 

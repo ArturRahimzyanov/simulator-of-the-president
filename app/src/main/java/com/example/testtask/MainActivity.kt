@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         binding.whitePeople.setImageLevel(peopleLevel)
         binding.whiteRubles.setImageLevel(rublesLevel)
         binding.whiteNature.setImageLevel(natureLevel)
-        Log.d(TAG, "${binding.whiteWeapon.height}")
     }
 
     private fun setupCards(){
@@ -59,6 +58,7 @@ class MainActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCardDisappeared(view: View?, position: Int) {
         Log.d(TAG, "onCardDisappeared  $position ")
+
     }
 
     override fun onCardDragging(direction: Direction?, ratio: Float) {

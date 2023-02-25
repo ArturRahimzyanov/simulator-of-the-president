@@ -2,6 +2,6 @@
 <clip
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:clipOrientation="vertical"
-    android:drawable="@drawable/ruble_white"
+    android:drawable="@drawable/ruble"
     android:gravity="bottom">
 </clip>
